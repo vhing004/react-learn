@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+import Test from "./tests/Test.js";
 import "./App.scss";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <Test />
       </header>
     </div>
   );
