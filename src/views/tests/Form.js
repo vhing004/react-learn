@@ -5,6 +5,11 @@ class Form extends Component {
   state = {
     first_name: "",
     last_name: "",
+    arrJobs: [
+      { id: 1, title: "Dev", salary: "500" },
+      { id: 2, title: "Tester", salary: "400" },
+      { id: 3, title: "Manager", salary: "600" },
+    ],
   };
 
   handleFirstName = (e) => {
@@ -35,7 +40,7 @@ class Form extends Component {
             onChange={(e) => this.handleFirstName(e)}
           />
           <br />
-          <lable>Age</lable>
+          <label>Age</label>
           <br />
           <input
             type="text"
@@ -51,7 +56,7 @@ class Form extends Component {
         </form>
 
         {/* PROPS */}
-        <ChildCPN name={"Huu Vinh"} age={25} />
+        <ChildCPN name={"Huu Vinh"} age={25} arrJobs={this.state.arrJobs} />
       </div>
     );
   }
