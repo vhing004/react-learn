@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ChildCPN from "./ChildCPN";
 
 class Form extends Component {
   state = {
@@ -48,6 +49,9 @@ class Form extends Component {
             onClick={() => this.handleSublit()}
           />
         </form>
+
+        {/* PROPS */}
+        <ChildCPN name={"Huu Vinh"} age={25} />
       </div>
     );
   }
