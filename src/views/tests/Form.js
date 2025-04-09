@@ -32,7 +32,7 @@ class Form extends Component {
     return (
       <div>
         <form>
-          <lable>Name</lable>
+          <label>Name</label>
           <br />
           <input
             type="text"
