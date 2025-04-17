@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import Form from "./tests/Form.js";
+import MyComponent from "./tests/MyComponent.js";
 import "./App.scss";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         {/* <Test /> */}
-        <Form />
+        <MyComponent />
       </header>
     </div>
   );

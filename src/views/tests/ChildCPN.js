@@ -20,7 +20,7 @@ class ChildCPN extends Component {
         {this.state.show ? (
           <>
             <p>
-              My nameis {name} - {age} years old
+              My name is {name} - {age} years old
             </p>
             <ul>
               {arrJobs.map((item) => (

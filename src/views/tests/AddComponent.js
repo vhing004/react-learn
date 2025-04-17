@@ -3,49 +3,59 @@ import ChildCPN from "./ChildCPN";
 
 class Form extends Component {
   state = {
-    first_name: "",
-    last_name: "",
-    arrJobs: [
-      { id: 1, title: "Dev", salary: "500" },
-      { id: 2, title: "Tester", salary: "400" },
-      { id: 3, title: "Manager", salary: "600" },
-    ],
+    title: "",
+    salary: "",
   };
 
-  handleFirstName = (e) => {
+  handleTitle = (e) => {
     this.setState({
-      first_name: e.target.value,
+      title: e.target.value,
     });
   };
 
-  handleLastName = (e) => {
+  handleSalary = (e) => {
     this.setState({
-      last_name: e.target.value,
+      salary: e.target.value,
     });
   };
 
   handleSublit = () => {
     console.log(this.state);
+
+    if (!this.state.title || this.state.salary) {
+      return;
+    }
+
+    this.props.addNewJob({
+      id: Math.floor(Math.random() * 1000),
+      title: this.state.title,
+      salary: this.state.salary,
+    });
+
+    this.setState({
+      title: "",
+      salary: "",
+    });
   };
 
   render() {
     return (
       <div>
         <form>
-          <label>Name</label>
+          <label>Title</label>
           <br />
           <input
             type="text"
-            value={this.state.first_name}
-            onChange={(e) => this.handleFirstName(e)}
+            value={this.state.title}
+            onChange={(e) => this.handleTitle(e)}
           />
           <br />
-          <label>Age</label>
+          <label>Salary</label>
           <br />
           <input
             type="text"
-            value={this.state.last_name}
-            onChange={(e) => this.handleLastName(e)}
+            value={this.state.salary}
+            onChange={(e) => this.handleSalary(e)}
           />
           <br />
           <input
@@ -54,9 +64,6 @@ class Form extends Component {
             onClick={() => this.handleSublit()}
           />
         </form>
-
-        {/* PROPS */}
-        <ChildCPN name={"Huu Vinh"} age={25} arrJobs={this.state.arrJobs} />
       </div>
     );
   }
