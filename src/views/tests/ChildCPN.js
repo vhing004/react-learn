@@ -11,6 +11,10 @@ class ChildCPN extends Component {
     });
   };
 
+  handleDelete = (job) => {
+    this.props.handleDeleteJob(job);
+  };
+
   render() {
     // Dịnh nghĩa nhanh nhiều props
     let { name, age, arrJobs } = this.props;
@@ -25,7 +29,8 @@ class ChildCPN extends Component {
             <ul>
               {arrJobs.map((item) => (
                 <li key={item.id}>
-                  {item.title} - {item.salary} $
+                  {item.title} - {item.salary}${" "}
+                  <span onClick={() => this.handleDelete(item)}>&times;</span>
                 </li>
               ))}
             </ul>

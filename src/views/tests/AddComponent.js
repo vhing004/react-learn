@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ChildCPN from "./ChildCPN";
 
 class Form extends Component {
   state = {
@@ -22,7 +21,7 @@ class Form extends Component {
   handleSublit = () => {
     console.log(this.state);
 
-    if (!this.state.title || this.state.salary) {
+    if (!this.state.title || !this.state.salary) {
       return;
     }
 

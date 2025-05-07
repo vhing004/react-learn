@@ -17,11 +17,19 @@ class Form extends Component {
     });
   };
 
+  handleDeleteJob = (item) => {
+    let currentJob = this.state.arrJobs;
+    currentJob= currentJob.filter((job) => job.id !== item.id);
+    this.setState({
+      arrJobs: currentJob,
+    });
+  }
+
   render() {
     return (
       <div>
         <AddComponent addNewJob={this.addNewJob} />
-        <ChildCPN arrJobs={this.state.arrJobs} />
+        <ChildCPN arrJobs={this.state.arrJobs} handleDeleteJob={this.handleDeleteJob} />
       </div>
     );
   }
